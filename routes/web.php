@@ -14,3 +14,15 @@
 Route::get('/', function () {
     return view('home');
 });
+
+
+Route::get('login', [ 'as' => 'loginNEW', 'uses' => 'LoginController@index']);
+Route::post('login', [ 'as' => 'loginNEW', 'uses' => 'LoginController@login']);
+
+Route::get('register', [ 'as' => 'register', 'uses' => 'RegisterController@index']);
+
+Route::get('dashboard', [ 'as' => 'dashboard', 'uses' => 'LoginController@dashboard']);
+
+Route::get('/template', function () {
+    return view('layouts.app');
+});
